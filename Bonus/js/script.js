@@ -2,9 +2,16 @@ var numKm = prompt ("Quanti chilometri devi percorrere?");
 document.getElementById("numKm").innerHTML = numKm;
 numKm=parseInt(numKm);
 
-var ageUser = prompt ("Quanti anni hai ?");
+var yearUser = prompt ("In che anno sei nato ?");
+
+
+var today = new Date();
+var thisYear = today.getFullYear();
+var ageUser = thisYear - yearUser;
+
 document.getElementById("ageUser").innerHTML = ageUser;
 ageUser=parseInt(ageUser);
+
 
 var price = 0.21;
 
@@ -30,7 +37,7 @@ document.getElementById("discount").innerHTML += discount;
 
 if (ageUser < 18){
      var priceDis = priceT * 0.80; //sconto 20
-  //qui fatto errore di introduzione di un primo if 
+  
 } else{
       if (ageUser > 65) {
      var priceDis = priceT * 0.60; //sconto 40
@@ -40,9 +47,9 @@ if (ageUser < 18){
 }
 
 
-//arrotondamento NUOVA var con fixed
+//arrotondamento NUOVA var con toFixed
 
-var priceDisAr = Math.round(priceDis * 100) / 100;
+var priceDisAr = priceDis.toFixed(2);
 
 document.getElementById("priceDisAr").innerHTML = priceDisAr + "€";
 
