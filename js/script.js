@@ -14,17 +14,17 @@ document.getElementById("priceT").innerHTML = priceT;
 var priceDis;
 var discount;
 
-// if (ageuser < 18){
-//       var discount = "previsto sconto 20%";
-// }else {
-//       if (ageUser > 65){
-//             var discount = "previsto sconto 60%" ;
-// }else {
-//       var discount = "previsto prezzo intero"
-// }
-// }
+if (ageUser < 18){
+      var discount = " previsto sconto 20%";
+}else {
+      if (ageUser > 65){
+            var discount = " previsto sconto 60%" ;
+}else {
+      var discount = " previsto prezzo intero"
+}
+}
 
-// document.getElementById("discount").innerHTML = discount;
+document.getElementById("discount").innerHTML += discount;
 
 //calcolare sconto nell espressione e assegnare una sola var per entrambi gli sconti
 
