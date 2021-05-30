@@ -12,19 +12,44 @@ var priceT = price * numKm ;
 document.getElementById("priceT").innerHTML = priceT;
 
 var priceDis;
+var discount;
+
+// if (ageuser < 18){
+//       var discount = "previsto sconto 20%";
+// }else {
+//       if (ageUser > 65){
+//             var discount = "previsto sconto 60%" ;
+// }else {
+//       var discount = "previsto prezzo intero"
+// }
+// }
+
+// document.getElementById("discount").innerHTML = discount;
 
 //calcolare sconto nell espressione e assegnare una sola var per entrambi gli sconti
 
-
-
 if (ageUser < 18){
      var priceDis = priceT * 0.80; //sconto 20
-
-} else if (ageUser > 65) {
-     var priceDis = priceT * 0.60;//sconto 40
+  //qui fatto errore di introduzione di un primo if 
+} else{
+      if (ageUser > 65) {
+     var priceDis = priceT * 0.60; //sconto 40
 } else {
       var priceDis = priceT;
 }
+}
+//TERRORE LA GRAFFA QUI SOPRA CHIUDE IL PRIMO else - TERRORE NaN e mezzora e piu di ogni
+
+//arrotondamento NUOVA var
+
+var priceDisAr = Math.round(priceDis * 100) / 100;
+
+document.getElementById("priceDisAr").innerHTML = priceDisAr + "€";
+
+
+
+
+
 
 
 
